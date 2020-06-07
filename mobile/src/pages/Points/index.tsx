@@ -31,6 +31,7 @@ interface Point {
   latitude: number;
   longitude: number;
   image: string;
+  image_url: string;
 }
 
 interface Params {
@@ -123,7 +124,7 @@ const Points: React.FC = () => {
     <>
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigateBack}>
-          <Icon name="arrow-left" size={20} color="#34cb79" />
+          <Icon name="arrow-left" size={24} color="#34cb79" />
         </TouchableOpacity>
 
         <Text style={styles.title}>Bem vindo.</Text>
@@ -156,7 +157,7 @@ const Points: React.FC = () => {
                     <Image
                       style={styles.mapMarkerImage}
                       source={{
-                        uri: point.image,
+                        uri: point.image_url,
                       }}
                     />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
